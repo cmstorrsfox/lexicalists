@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
-//import Datamuse from '../../util/Datamuse';
 
+// variables for DataMuse
 const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
 const accessURL = 'https://api.datamuse.com/words?';
 const queryParams = 'rel_jjb=';
