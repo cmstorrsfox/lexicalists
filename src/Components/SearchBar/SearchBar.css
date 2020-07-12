@@ -1,0 +1,31 @@
+.search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.search-bar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    border: 1px solid black;
+    padding: 0.8rem;
+    overflow-x: hidden;
+
+
+
+}
+
+.search-field {
+    width: 90%;
+    margin-right: .8rem;
+
+}
+
+.searchButton {
+    width: 10%;
+    overflow-x: hidden;
+}
