@@ -34,7 +34,10 @@ class SearchBar extends React.Component {
     handleSubmit(event) {
         alert(`an enquiry was submitted: ${this.state.term}`);
         event.preventDefault();
-        this.setState({ term: '' })
+        this.setState({ 
+            term: '',
+            queryParams: ''
+     })
         
     }
 
@@ -58,7 +61,7 @@ class SearchBar extends React.Component {
                 </form>
                 <form className="parameter-selector">
                     <select value={this.state.queryParams} onChange={this.handleParameterChange}>
-                        <option value="" disabled>Select your search parameter here</option>
+                        <option value='' disabled>Select your search parameter here</option>
                         <option value="rel_jjb=">Adjective Collocations</option>
                         <option value="rel_jja=">Noun Collocations</option>
                     </select>
