@@ -12,17 +12,21 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    border: 1px solid black;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
     padding: 0.8rem;
     overflow-x: hidden;
-
-
 
 }
 
 .input-field {
     display: flex;
     flex-wrap: nowrap;
+}
+
+input {
+    font-size: 1rem;
 }
 
 .search-field {
@@ -38,6 +42,16 @@
 
 .parameter-selector {
     display: flex;
+    width: 100%;
     justify-content: space-around;
-    color: red;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    padding: 1rem;
+}
+
+select {
+    font-size: 1rem;
+    background-color: lightcoral;
+    margin: 0 auto;
 }

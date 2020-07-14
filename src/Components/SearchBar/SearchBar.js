@@ -29,10 +29,17 @@ class SearchBar extends React.Component {
     //event handler for parameter field - provides parameter
     handleParameterChange(event) {
         this.setState({ queryParams: event.target.value })
+        const paramSelector = document.getElementById('param-selector');
+        paramSelector.style.backgroundColor = 'lightgreen';
     }
 
     handleSubmit(event) {
-        alert(`an enquiry was submitted: ${this.state.term}`);
+        if(this.state.searchParams === '' ) {
+            alert('Please select a search parameter then try your search again');
+        } else {
+            alert(`an enquiry was submitted: ${this.state.term}`);
+        }
+        
         event.preventDefault();
         this.setState({ 
             term: '',
@@ -60,7 +67,7 @@ class SearchBar extends React.Component {
                     </div>
                 </form>
                 <form className="parameter-selector">
-                    <select value={this.state.queryParams} onChange={this.handleParameterChange}>
+                    <select value={this.state.queryParams} onChange={this.handleParameterChange} id="param-selector">
                         <option value='' disabled>Select your search parameter here</option>
                         <option value="rel_jjb=">Adjective Collocations</option>
                         <option value="rel_jja=">Noun Collocations</option>

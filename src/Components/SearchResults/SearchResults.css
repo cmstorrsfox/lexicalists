@@ -3,7 +3,7 @@
     flex-direction: column;
     margin: 1rem auto;
     width: 90%;
-    height: 800px;
+    height: auto;
     border: 1px solid black;
 }
 
@@ -14,6 +14,7 @@
 }
 
 .column {
-    width: 33%;
-    border: 1px solid black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
