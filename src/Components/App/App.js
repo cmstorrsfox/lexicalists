@@ -6,7 +6,6 @@ import SearchResults from '../SearchResults/SearchResults';
 // variables for DataMuse
 const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
 const accessURL = 'https://api.datamuse.com/words?';
-const queryParams = 'rel_jjb=';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,14 +13,16 @@ class App extends React.Component {
 
     this.state = {
       term: '',
+      queryParams: '',
       searchResults: []
     }
 
     this.search = this.search.bind(this);
   }
 
-    search(term) {
+    search(term, queryParams) {
       let endpoint = `${corsAnywhere}${accessURL}${queryParams}${term}`;
+      console.log(endpoint);
 
       fetch(endpoint)
       .then(response => response.json()
@@ -30,17 +31,11 @@ class App extends React.Component {
       )  
     }
 
-
-
-
-
   render() {
     return (
       <div className="App">
         <SearchBar onSearch={this.search} />
-        <SearchResults  searchResults={this.state.searchResults}
-                        term={this.state.term}
-        />
+        <SearchResults  searchResults={this.state.searchResults} />
       </div>
     );
 
