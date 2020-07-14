@@ -27,15 +27,22 @@ class App extends React.Component {
       fetch(endpoint)
       .then(response => response.json()
       )
-      .then(jsonResponse => this.setState({ searchResults: jsonResponse })
-      )  
+      .then(jsonResponse => this.setState({ 
+        term: term,
+        searchResults: jsonResponse,
+        queryParams: queryParams 
+      })
+      )
     }
 
   render() {
     return (
       <div className="App">
         <SearchBar onSearch={this.search} />
-        <SearchResults  searchResults={this.state.searchResults} />
+        <SearchResults  searchResults={this.state.searchResults} 
+                        queryParams={this.state.queryParams}
+                        term={this.state.term}
+        />
       </div>
     );
 

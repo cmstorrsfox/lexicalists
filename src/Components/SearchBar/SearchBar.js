@@ -29,12 +29,10 @@ class SearchBar extends React.Component {
     //event handler for parameter field - provides parameter
     handleParameterChange(event) {
         this.setState({ queryParams: event.target.value })
-        const paramSelector = document.getElementById('param-selector');
-        paramSelector.style.backgroundColor = 'lightgreen';
     }
 
     handleSubmit(event) {
-        if(this.state.searchParams === '' ) {
+        if(this.state.queryParams === '' ) {
             alert('Please select a search parameter then try your search again');
         } else {
             alert(`an enquiry was submitted: ${this.state.term}`);
@@ -44,8 +42,8 @@ class SearchBar extends React.Component {
         this.setState({ 
             term: '',
             queryParams: ''
-     })
         
+        })
     }
 
 

@@ -8,11 +8,11 @@ class SearchResults extends React.Component {
     render() {
         return (
             <div className="results-container">
-                <h1>Results</h1>
+                <h1>Results for {this.props.term}</h1>
                     <div className="column" id="column-results">
                         {
                             this.props.searchResults.map((item) => {
-                                return <Word word={item.word} key={item.word} />
+                                return <Word word={item.word} term={this.props.term} queryParams={this.props.queryParams} key={item.word} />
                             })
                         }                    
                     </div>
