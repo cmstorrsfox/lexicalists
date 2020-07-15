@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
+import Container from 'react-bootstrap/Container';
+import Jumbotron from 'react-bootstrap/Jumbotron';
 
 // variables for DataMuse
 const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
@@ -37,13 +39,17 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <Container fluid className="App">
+        <Jumbotron fluid>
+          <h1 className="display-2 text-light bg-dark py-2">Welcome to Lexicalists</h1>
+
+        </Jumbotron>
         <SearchBar onSearch={this.search} />
         <SearchResults  searchResults={this.state.searchResults} 
                         queryParams={this.state.queryParams}
                         term={this.state.term}
         />
-      </div>
+      </Container>
     );
 
   }

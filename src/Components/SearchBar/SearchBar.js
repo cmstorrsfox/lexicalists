@@ -40,13 +40,10 @@ class SearchBar extends React.Component {
     handleSubmit(event) {
         if(this.state.queryParams === '' ) {
             alert('Please select a search parameter then try your search again');
-        } else {
-            alert(`an enquiry was submitted: ${this.state.term}`);
-        }
-        
+        } 
+
         event.preventDefault();
         this.setState({ 
-            term: '',
             queryParams: ''
         
         })
