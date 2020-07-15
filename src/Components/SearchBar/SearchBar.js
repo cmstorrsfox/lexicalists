@@ -1,5 +1,11 @@
 import React from 'react';
-import './SearchBar.css';
+//import './SearchBar.css';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+import Form  from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
+import ToggleButton from 'react-bootstrap/ToggleButton';
 
 
 class SearchBar extends React.Component {
@@ -45,33 +51,29 @@ class SearchBar extends React.Component {
         
         })
     }
+    
 
 
     render() {
         return (
-            <div className="search">
-                <form   onSubmit={this.handleSubmit}
-                        className="search-bar">
-                    <div className="input-field">
-                        <input  value={this.state.term}
-                                onChange={this.handleSearchChange} 
-                                className="search-field"
-                                type="text" 
-                                placeholder="Enter your search term here">
-                        </input>
-                        <button onClick={this.search}
-                                className="searchButton">Search
-                        </button>
-                    </div>
-                </form>
-                <form className="parameter-selector">
-                    <select value={this.state.queryParams} onChange={this.handleParameterChange} id="param-selector">
-                        <option value='' disabled>Select your search parameter here</option>
-                        <option value="rel_jjb=">Adjective Collocations</option>
-                        <option value="rel_jja=">Noun Collocations</option>
-                    </select>
-                </form>
-            </div>
+            <Container className="search">
+                <Form   onSubmit={this.handleSubmit} className="search-bar">
+                    <Form.Group controlId="formSearchField" className="input-field">
+                        <Form.Row className="m-3 justify-content-center">
+                            <Col xs={12} lg={9} className="mt-2">
+                                <Form.Control   type="input" size="lg" value={this.state.term} onChange={this.handleSearchChange} className="search-field" placeholder="Enter your search term here" />
+                            </Col>
+                            <Col xs={12} lg={3} className="mt-2">
+                                <Button type="submit" size="lg" block onClick={this.search} className="searchButton" variant="primary">Search</Button>
+                            </Col>
+                        </Form.Row>
+                    </Form.Group>
+                </Form>
+                <ToggleButtonGroup type="radio" name="query">
+                    <ToggleButton value={'rel_jja='} onClick={this.handleParameterChange} variant="primary" className="border border-warning rounded-top rounded-bottom m-1" size="sm">Search for nouns that often go with {this.state.term}</ToggleButton>
+                    <ToggleButton value={'rel_jjb='} onClick={this.handleParameterChange} variant="primary" className="border border-warning rounded-top rounded-bottom m-1"size="sm">Search for adjectives that often go with {this.state.term}</ToggleButton>
+                </ToggleButtonGroup>
+            </Container>
         )
     }
 };
