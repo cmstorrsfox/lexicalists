@@ -1,0 +1,10 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/rfs/scss";
+
+
+$enable-responsive-font-sizes: true;
+
+.title {
+    @include responsive-font-size(64px);
+    font-family: Helvetica;
+}
