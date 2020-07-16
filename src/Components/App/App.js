@@ -41,7 +41,8 @@ class App extends React.Component {
     return (
       <Container fluid className="App">
         <Jumbotron fluid>
-          <h1 className="display-2 text-light bg-dark py-2">Welcome to Lexicalists</h1>
+          <h1 className="display-2 text-light bg-dark py-2">Welcome to the Collocation Station</h1>
+          <p className="lead">Use this tool to look up simple noun or adjective collocations for common words.</p>
 
         </Jumbotron>
         <SearchBar onSearch={this.search} />
