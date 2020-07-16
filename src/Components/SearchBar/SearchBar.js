@@ -1,5 +1,5 @@
 import React from 'react';
-//import './SearchBar.css';
+import './SearchBar.css';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Form  from 'react-bootstrap/Form';
@@ -54,22 +54,41 @@ class SearchBar extends React.Component {
     render() {
         return (
             <Container className="search">
-                <Form   onSubmit={this.handleSubmit} className="search-bar">
+                <Form className="search-bar">
                     <Form.Group controlId="formSearchField" className="input-field">
-                        <Form.Row className="m-3 justify-content-center">
-                            <Col xs={12} lg={9} className="mt-2">
-                                <Form.Control   type="input" size="lg" value={this.state.term} onChange={this.handleSearchChange} className="search-field" placeholder="Enter your search term here" />
+                        <Form.Row xs={12} className="mt-3">
+                            <Col xs={12} md={4} lg={3} className="my-auto d-flex justify-content-md-start justify-content-center">
+                                <Form.Label className="step-label">Step 1: Enter your search term here:</Form.Label>
                             </Col>
-                            <Col xs={12} lg={3} className="mt-2">
-                                <Button type="submit" size="lg" block onClick={this.search} className="searchButton" variant="primary">Search</Button>
+                            <Col xs={12} md={8} lg={9} className="my-auto d-flex justify-content-md-start justify-content-center">
+                                <Form.Control type="input" size="lg" value={this.state.term} onChange={this.handleSearchChange} className="search-field" />
                             </Col>
                         </Form.Row>
                     </Form.Group>
                 </Form>
-                <ToggleButtonGroup type="radio" name="query">
-                    <ToggleButton value={'rel_jja='} onClick={this.handleParameterChange} variant="primary" className="border border-warning rounded-top rounded-bottom m-1" size="sm">Search for nouns that often go with {this.state.term}</ToggleButton>
-                    <ToggleButton value={'rel_jjb='} onClick={this.handleParameterChange} variant="primary" className="border border-warning rounded-top rounded-bottom m-1"size="sm">Search for adjectives that often go with {this.state.term}</ToggleButton>
-                </ToggleButtonGroup>
+                <Form.Group controlId="parameterSelector">
+                    <Form.Row xs={12}>
+                        <Col xs={12} md={4} lg={3} className="my-auto d-flex justify-content-md-start justify-content-center">
+                            <Form.Label className="step-label">Step 2: Select your search criteria here:</Form.Label>
+                        </Col>
+                        <Col xs={12} md={8} lg={9} className="my-auto d-flex justify-content-md-start justify-content-center">
+                            <ToggleButtonGroup type="radio" name="query">
+                                <ToggleButton value={'rel_jja='} onClick={this.handleParameterChange} variant="primary" className="border border-warning rounded-top rounded-bottom m-1" size="xs">Nouns that often go with {this.state.term}</ToggleButton>
+                                <ToggleButton value={'rel_jjb='} onClick={this.handleParameterChange} variant="primary" className="border border-warning rounded-top rounded-bottom m-1"size="xs">Adjectives that often go with {this.state.term}</ToggleButton>
+                            </ToggleButtonGroup>
+                        </Col>
+                    </Form.Row>
+                </Form.Group>
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Row xs={12}>
+                        <Col xs={12} md={4} lg={3} className="my-auto d-flex justify-content-md-start justify-content-center">
+                            <Form.Label className="step-label">Step 3: Click to search:</Form.Label>
+                        </Col>
+                        <Col xs={12} md={8} lg={9} className="my-auto d-flex justify-content-md-start justify-content-center">
+                            <Button type="submit" size="md" block onClick={this.search} className="searchButton" variant="primary">Search</Button>
+                        </Col>
+                    </Form.Row>
+                </Form>
             </Container>
         )
     }
