@@ -29,7 +29,7 @@ class SearchBar extends React.Component {
     
     //event handler for search field - provides term
     handleSearchChange(event) {
-        this.setState({ term: event.target.value })
+        this.setState({ term: event.target.value.toLowerCase() })
     }
 
     //event handler for parameter field - provides parameter
@@ -38,9 +38,10 @@ class SearchBar extends React.Component {
     }
 
     handleSubmit(event) {
-        if(this.state.queryParams === '' ) {
+        if(this.state.queryParams === '') {
             alert('Please select a search parameter then try your search again');
-        } 
+        }
+         
 
         event.preventDefault();
         this.setState({ 
@@ -73,8 +74,8 @@ class SearchBar extends React.Component {
                         </Col>
                         <Col xs={12} md={8} lg={9} className="my-auto d-flex justify-content-md-start justify-content-center">
                             <ToggleButtonGroup type="radio" name="query">
-                                <ToggleButton value={'rel_jja='} onClick={this.handleParameterChange} variant="primary" className="border border-warning rounded-top rounded-bottom m-1" size="xs">Nouns that often go with {this.state.term}</ToggleButton>
-                                <ToggleButton value={'rel_jjb='} onClick={this.handleParameterChange} variant="primary" className="border border-warning rounded-top rounded-bottom m-1"size="xs">Adjectives that often go with {this.state.term}</ToggleButton>
+                                <ToggleButton value={'rel_jja='} onClick={this.handleParameterChange} variant="outline-primary" className="select-button rounded-top rounded-bottom m-1" size="sm">Nouns that often go with {this.state.term}</ToggleButton>
+                                <ToggleButton value={'rel_jjb='} onClick={this.handleParameterChange} variant="outline-primary" className="select-button rounded-top rounded-bottom m-1"size="sm">Adjectives that often go with {this.state.term}</ToggleButton>
                             </ToggleButtonGroup>
                         </Col>
                     </Form.Row>

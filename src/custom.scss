@@ -1,10 +1,44 @@
-@import "../node_modules/bootstrap/scss/bootstrap";
-@import "../node_modules/rfs/scss";
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/utilities";
 
-
+//Sass variables
 $enable-responsive-font-sizes: true;
 
-.title {
-    @include responsive-font-size(64px);
-    font-family: Helvetica;
+
+//media-queries for font-sizes
+
+html {
+    font-size: 1rem;
+  }
+  
+  @include media-breakpoint-up(sm) {
+    html {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @include media-breakpoint-up(md) {
+    html {
+      font-size: 1.4rem;
+    }
+  }
+  
+  @include media-breakpoint-up(lg) {
+    html {
+      font-size: 1.6rem;
+    }
+  }
+
+
+  //responsive title
+  .title {
+    @include responsive-font-size(4rem);
 }
+
+//results container
+.results-title {
+    @include responsive-font-size(3rem);
+}
+
