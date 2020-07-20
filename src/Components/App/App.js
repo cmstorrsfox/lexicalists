@@ -41,9 +41,7 @@ class App extends React.Component {
       <Container fluid className="App">
         <Jumbotron fluid>
           <h1 className="title display-1 text-light bg-dark py-2">Welcome to the Collocation Station</h1>
-          <p className="lead">Use this tool to look up simple noun or adjective collocations for common words.</p>
-          <p className="font-italic">Note for Dom: This is just a placeholder name!</p>
-
+          <p className="lead">Use this tool to search for a variety of different attributes of a word of your choice.</p>
         </Jumbotron>
         <SearchBar onSearch={this.search} />
         <SearchResults  searchResults={this.state.searchResults} 

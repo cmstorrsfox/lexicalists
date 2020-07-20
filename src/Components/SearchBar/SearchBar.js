@@ -74,8 +74,11 @@ class SearchBar extends React.Component {
                         </Col>
                         <Col xs={12} md={8} lg={9} className="my-auto d-flex justify-content-md-start justify-content-center">
                             <ToggleButtonGroup type="radio" name="query">
-                                <ToggleButton value={'rel_jja='} onClick={this.handleParameterChange} variant="outline-primary" className="select-button rounded-top rounded-bottom m-1" size="sm">Nouns that often go with {this.state.term}</ToggleButton>
-                                <ToggleButton value={'rel_jjb='} onClick={this.handleParameterChange} variant="outline-primary" className="select-button rounded-top rounded-bottom m-1"size="sm">Adjectives that often go with {this.state.term}</ToggleButton>
+                                <ToggleButton value={'rel_jja='} onClick={this.handleParameterChange} variant="outline-primary" className="select-button rounded-top rounded-bottom m-1" size="sm">Nouns that are often modified by {this.state.term}</ToggleButton>
+                                <ToggleButton value={'rel_jjb='} onClick={this.handleParameterChange} variant="outline-primary" className="select-button rounded-top rounded-bottom m-1"size="sm">Adjectives that often modify {this.state.term}</ToggleButton>
+                                <ToggleButton value={'rel_syn='} onClick={this.handleParameterChange} variant="outline-primary" className="select-button rounded-top rounded-bottom m-1"size="sm">Common synonyms of {this.state.term}</ToggleButton>
+                                <ToggleButton value={'rel_trg='} onClick={this.handleParameterChange} variant="outline-primary" className="select-button rounded-top rounded-bottom m-1"size="sm">Words often associated with {this.state.term} in a text</ToggleButton>
+                                <ToggleButton value={'rel_hom='} onClick={this.handleParameterChange} variant="outline-primary" className="select-button rounded-top rounded-bottom m-1"size="sm">Homonyms of {this.state.term}</ToggleButton>
                             </ToggleButtonGroup>
                         </Col>
                     </Form.Row>
