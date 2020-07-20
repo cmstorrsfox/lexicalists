@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Datamuse from '../../util/Datamuse';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import '../../custom.scss';
@@ -8,8 +9,8 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 
 
 // variables for DataMuse
-const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
-const accessURL = 'https://api.datamuse.com/words?';
+//const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
+//const accessURL = 'https://api.datamuse.com/words?';
 
 class App extends React.Component {
   constructor(props) {
@@ -25,18 +26,14 @@ class App extends React.Component {
   }
 
     search(term, queryParams) {
-      let endpoint = `${corsAnywhere}${accessURL}${queryParams}${term}`;
-      console.log(endpoint);
-
-      fetch(endpoint)
-      .then(response => response.json()
-      )
+      Datamuse.search(term, queryParams)
       .then(jsonResponse => this.setState({ 
         term: term,
-        searchResults: jsonResponse,
-        queryParams: queryParams 
-      })
-      )
+        queryParams: queryParams,
+        searchResults: jsonResponse 
+      
+      }))
+
     }
 
   render() {
