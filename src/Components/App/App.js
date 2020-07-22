@@ -8,10 +8,6 @@ import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 
 
-// variables for DataMuse
-//const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
-//const accessURL = 'https://api.datamuse.com/words?';
-
 class App extends React.Component {
   constructor(props) {
     super(props);

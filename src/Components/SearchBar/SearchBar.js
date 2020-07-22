@@ -67,22 +67,24 @@ class SearchBar extends React.Component {
                         </Form.Row>
                     </Form.Group>
                 </Form>
-                <Form.Group controlId="parameterSelector">
-                    <Form.Row xs={12}>
-                        <Col xs={12} md={4} lg={3} className="my-auto d-flex justify-content-md-start justify-content-center">
-                            <Form.Label className="step-label">Step 2: Select your search criteria here:</Form.Label>
-                        </Col>
-                        <Col xs={12} md={8} lg={9} className="my-auto d-flex justify-content-md-start justify-content-center">
-                            <ToggleButtonGroup type="radio" name="query">
-                                <ToggleButton value={'rel_jja='} onClick={this.handleParameterChange} variant="outline-primary" className="select-button rounded-top rounded-bottom m-1" size="sm">Nouns that are often modified by {this.state.term}</ToggleButton>
-                                <ToggleButton value={'rel_jjb='} onClick={this.handleParameterChange} variant="outline-primary" className="select-button rounded-top rounded-bottom m-1"size="sm">Adjectives that often modify {this.state.term}</ToggleButton>
-                                <ToggleButton value={'rel_syn='} onClick={this.handleParameterChange} variant="outline-primary" className="select-button rounded-top rounded-bottom m-1"size="sm">Common synonyms of {this.state.term}</ToggleButton>
-                                <ToggleButton value={'rel_trg='} onClick={this.handleParameterChange} variant="outline-primary" className="select-button rounded-top rounded-bottom m-1"size="sm">Words often associated with {this.state.term} in a text</ToggleButton>
-                                <ToggleButton value={'rel_hom='} onClick={this.handleParameterChange} variant="outline-primary" className="select-button rounded-top rounded-bottom m-1"size="sm">Homonyms of {this.state.term}</ToggleButton>
-                            </ToggleButtonGroup>
-                        </Col>
-                    </Form.Row>
-                </Form.Group>
+                <Form>
+                    <Form.Group controlId="parameterSelector">
+                        <Form.Row xs={12}>
+                            <Col xs={12} md={4} lg={3} className="my-auto d-flex justify-content-md-start justify-content-center">
+                                <Form.Label className="step-label">Step 2: Select your search criteria here:</Form.Label>
+                            </Col>
+                            <Col xs={12} md={8} lg={9} className="my-auto d-flex justify-content-md-start justify-content-center">
+                                <ToggleButtonGroup type="radio" name="query" vertical className="mx-auto w-100">
+                                    <ToggleButton value={'rel_jja='} onClick={this.handleParameterChange} variant="outline-primary" className="select-button rounded-top rounded-bottom m-1" size="sm">Nouns that are often modified by {this.state.term}</ToggleButton>
+                                    <ToggleButton value={'rel_jjb='} onClick={this.handleParameterChange} variant="outline-primary" className="select-button rounded-top rounded-bottom m-1"size="sm">Adjectives that often modify {this.state.term}</ToggleButton>
+                                    <ToggleButton value={'rel_syn='} onClick={this.handleParameterChange} variant="outline-primary" className="select-button rounded-top rounded-bottom m-1"size="sm">Common synonyms of {this.state.term}</ToggleButton>
+                                    <ToggleButton value={'rel_trg='} onClick={this.handleParameterChange} variant="outline-primary" className="select-button rounded-top rounded-bottom m-1"size="sm">Words often associated with {this.state.term} in a text</ToggleButton>
+                                    <ToggleButton value={'rel_hom='} onClick={this.handleParameterChange} variant="outline-primary" className="select-button rounded-top rounded-bottom m-1"size="sm">Homonyms of {this.state.term}</ToggleButton>
+                                </ToggleButtonGroup>
+                            </Col>
+                        </Form.Row>
+                    </Form.Group>
+                </Form>
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Row xs={12}>
                         <Col xs={12} md={4} lg={3} className="my-auto d-flex justify-content-md-start justify-content-center">

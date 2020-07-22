@@ -12,7 +12,7 @@ class SearchResults extends React.Component {
         return (
             <Container fluid className="results-container mt-3 bg-light border border-dark rounded-top">
                 <Row xs={12} lg={12} className="bg-dark">
-                    <h1 className="results-title display-2 text-light mx-auto">Results for {this.props.term}</h1>
+                    <h1 className="results-title display-2 text-light mx-auto">Results</h1>
                 </Row>
                 <Row className="justify-content-center mt-3">
                     <Col xs={12} className="text-primary" id="column-results">
