@@ -15,8 +15,8 @@ class Word extends React.Component {
     popover() {
         return (
             <Popover id="popover-basic">
-                <Popover.Title as="h3">{this.props.word} ({this.props.partOfSpeech.shift()})</Popover.Title>
-                <Popover.Content>{this.props.definition.shift()}</Popover.Content>
+                <Popover.Title as="h3">{this.props.word} ({this.props.partOfSpeech})</Popover.Title>
+                <Popover.Content>{this.props.definition}</Popover.Content>
             </Popover>
         );
     }
