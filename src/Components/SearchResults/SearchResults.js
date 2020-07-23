@@ -46,7 +46,9 @@ class SearchResults extends React.Component {
 
     render() {
         return (
-            <Container>{this.renderResults()}</Container>
+            <Container>
+                {this.renderResults()}
+            </Container>
         )
         
     }

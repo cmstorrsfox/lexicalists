@@ -40,8 +40,7 @@ class SearchBar extends React.Component {
     handleSubmit(event) {
         if(this.state.queryParams === '') {
             alert('Please select a search parameter then try your search again');
-        }
-         
+        }        
 
         event.preventDefault();
         
@@ -87,7 +86,7 @@ class SearchBar extends React.Component {
                         <Col xs={12} md={4} lg={3} className="my-auto d-flex justify-content-md-start justify-content-center">
                             <Form.Label className="step-label">Step 3: Click to search:</Form.Label>
                         </Col>
-                        <Col xs={12} md={8} lg={9} className="my-auto d-flex justify-content-md-start justify-content-center">
+                        <Col xs={12} md={8} lg={9} className="my-auto d-flex justify-content-md-start justify-content-center pb-3">
                             <Button type="submit" size="md" block onClick={this.search} className="searchButton" variant="primary">Search</Button>
                         </Col>
                     </Form.Row>
