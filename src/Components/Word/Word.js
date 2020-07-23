@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
+import Alert from 'react-bootstrap/Alert'
 
 class Word extends React.Component {
     constructor(props) {
@@ -13,12 +14,31 @@ class Word extends React.Component {
     }
 
     popover() {
+        let definition = this.props.definition;
+        let partOfSpeech = this.props.partOfSpeech;
+        if (typeof definition === 'undefined') {
+            return (
+                <Popover>
+                    <Popover.Content><Alert variant="danger">No definition!</Alert></Popover.Content>
+                </Popover>
+            )
+        } else {
+            return (
+                <Popover>
+                    <Popover.Title>{this.props.word} ({partOfSpeech.shift()})</Popover.Title>
+                    <Popover.Content>{definition.shift()}</Popover.Content>
+                </Popover>
+            )
+        }
+
+        /*
         return (
             <Popover id="popover-basic">
                 <Popover.Title as="h3">{this.props.word} ({this.props.partOfSpeech})</Popover.Title>
                 <Popover.Content>{this.props.definition}</Popover.Content>
             </Popover>
         );
+        */
     }
 
     renderList(queryParams) {

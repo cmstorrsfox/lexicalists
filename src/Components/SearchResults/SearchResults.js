@@ -16,7 +16,7 @@ class SearchResults extends React.Component {
     renderResults() {
         if (this.props.searchResults.length !== 0) {
             return (
-                <Container fluid className="results-container py-2 my-3 bg-light border border-dark rounded-top">
+                <Container fluid className="results-container pb-2 my-3 bg-light border border-dark rounded-top">
                     <Row xs={12} lg={12} className="bg-dark">
                         <h1 className="results-title display-2 text-light mx-auto">Results for {this.props.term}</h1>
                     </Row>
