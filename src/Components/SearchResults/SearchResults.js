@@ -16,15 +16,15 @@ class SearchResults extends React.Component {
     renderResults() {
         if (this.props.searchResults.length !== 0) {
             return (
-                <Container fluid className="results-container mt-3 bg-light border border-dark rounded-top">
+                <Container fluid className="results-container py-2 my-3 bg-light border border-dark rounded-top">
                     <Row xs={12} lg={12} className="bg-dark">
                         <h1 className="results-title display-2 text-light mx-auto">Results for {this.props.term}</h1>
                     </Row>
-                    <Row className="justify-content-center mt-3">
-                        <Col xs={12} className="text-primary" id="column-results">
+                    <Row xs={12} className="mt-3 mx-auto">
+                        <Col xs={12} className="text-primary mx-auto justify-content-center" id="column-results">
                             {
                                 this.props.searchResults.map((item) => {
-                                    return <Word word={item.word} term={this.props.term} queryParams={this.props.queryParams} key={item.word} />
+                                    return <Word word={item.word} definition={item.defs} partOfSpeech={item.tags} term={this.props.term} queryParams={this.props.queryParams} key={item.word} />
                                 })
                             }                    
                         </Col>
