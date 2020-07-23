@@ -15,7 +15,8 @@ class App extends React.Component {
     this.state = {
       term: '',
       queryParams: '',
-      searchResults: []
+      searchResults: [],
+      hidden: true
     }
 
     this.search = this.search.bind(this);
@@ -26,7 +27,8 @@ class App extends React.Component {
       .then(jsonResponse => this.setState({ 
         term: term,
         queryParams: queryParams,
-        searchResults: jsonResponse 
+        searchResults: jsonResponse,
+        hidden: false
       
       }))
 
@@ -40,7 +42,8 @@ class App extends React.Component {
           <p className="lead">Use this tool to search for a variety of different attributes of a word of your choice.</p>
         </Jumbotron>
         <SearchBar onSearch={this.search} />
-        <SearchResults  searchResults={this.state.searchResults} 
+        <SearchResults  hidden={this.state.hidden}
+                        searchResults={this.state.searchResults} 
                         queryParams={this.state.queryParams}
                         term={this.state.term}
         />
